@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
+        applicationId = "com.example.calendarplannerpractice"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

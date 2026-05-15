@@ -1,12 +1,23 @@
 # Android AI-Assisted Practice
 
-This repo contains three standalone Android starter projects for one-hour AI-assisted coding practice. Each directory is meant to feel like a downloadable interview zip: a running Compose app, seed data, partial feature code, prompt files, hint files, and a few tests.
+This repo contains three independent Android starter projects for one-hour AI-assisted coding practice. Each top-level project directory is meant to feel like a downloadable interview zip: a running Compose app, seed data, partial feature code, prompt files, hint files, and a few tests.
 
 ## Projects
 
 - `field-notes`: offline CRUD, search/filter behavior, local persistence boundaries
 - `calendar-planner`: calendar time ranges, overlap detection, scheduling validation
 - `receipt-review`: parsed receipt review, editable form state, validation, upload retry states
+
+Each project has its own:
+
+- `settings.gradle.kts`
+- Gradle wrapper
+- `app` module
+- app name
+- Android `applicationId`
+- README
+
+To import a project in Android Studio, choose **Open** and select one of the project directories directly, for example `field-notes`, not the repo root.
 
 Each project keeps its prompt next to the app code:
 
@@ -25,7 +36,7 @@ Each project keeps its prompt next to the app code:
 
 ## Running Tests
 
-From the repo root:
+From the repo root, run each project separately:
 
 ```bash
 cd field-notes && ./gradlew test
@@ -33,8 +44,14 @@ cd ../calendar-planner && ./gradlew test
 cd ../receipt-review && ./gradlew test
 ```
 
-Or run a single project directly from its own directory:
+Or open a single project directory and run:
 
 ```bash
 ./gradlew test
+```
+
+If running from a fresh clone outside Android Studio, create a local `local.properties` in the project you are testing with your Android SDK path, for example:
+
+```properties
+sdk.dir=/Users/you/Library/Android/sdk
 ```
