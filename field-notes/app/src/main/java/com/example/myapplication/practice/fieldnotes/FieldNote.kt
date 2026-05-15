@@ -21,14 +21,6 @@ data class FieldNote(
     val updatedMinutesAgo: Int,
 )
 
-interface FieldNotesRepository {
-    fun loadNotes(): List<FieldNote>
-}
-
-class InMemoryFieldNotesRepository : FieldNotesRepository {
-    override fun loadNotes(): List<FieldNote> = FieldNotesStarterData.notes
-}
-
 object FieldNotesStarterData {
     val notes = listOf(
         FieldNote(
@@ -57,6 +49,69 @@ object FieldNotesStarterData {
             priority = NotePriority.Low,
             status = NoteStatus.Open,
             updatedMinutesAgo = 91,
+        ),
+        FieldNote(
+            id = "note-4",
+            title = "Air handler belt squeal",
+            description = "Intermittent squeal during high-speed fan cycle.",
+            room = "Roof AHU-2",
+            priority = NotePriority.Medium,
+            status = NoteStatus.Open,
+            updatedMinutesAgo = 124,
+        ),
+        FieldNote(
+            id = "note-5",
+            title = "Panel door latch loose",
+            description = "Electrical panel closes but latch does not hold firmly.",
+            room = "Electrical 2C",
+            priority = NotePriority.Low,
+            status = NoteStatus.Complete,
+            updatedMinutesAgo = 168,
+        ),
+        FieldNote(
+            id = "note-6",
+            title = "Pump vibration above baseline",
+            description = "Vibration reading is elevated compared with last inspection.",
+            room = "Pump Room 1",
+            priority = NotePriority.High,
+            status = NoteStatus.Open,
+            updatedMinutesAgo = 214,
+        ),
+        FieldNote(
+            id = "note-7",
+            title = "Thermostat calibration checked",
+            description = "Room sensor matched handheld meter within tolerance.",
+            room = "Office 3B",
+            priority = NotePriority.Low,
+            status = NoteStatus.Complete,
+            updatedMinutesAgo = 260,
+        ),
+        FieldNote(
+            id = "note-8",
+            title = "Condensate tray residue",
+            description = "Residue present along tray edge; cleaned and flagged for review.",
+            room = "Mechanical 4D",
+            priority = NotePriority.Medium,
+            status = NoteStatus.Open,
+            updatedMinutesAgo = 315,
+        ),
+        FieldNote(
+            id = "note-9",
+            title = "Generator fuel level verified",
+            description = "Fuel level and transfer switch indicators checked during walkthrough.",
+            room = "Generator Yard",
+            priority = NotePriority.Medium,
+            status = NoteStatus.Complete,
+            updatedMinutesAgo = 402,
+        ),
+        FieldNote(
+            id = "note-10",
+            title = "Door sensor intermittent",
+            description = "Security panel reported intermittent contact during open-close test.",
+            room = "Loading Dock",
+            priority = NotePriority.High,
+            status = NoteStatus.Open,
+            updatedMinutesAgo = 487,
         ),
     )
 }

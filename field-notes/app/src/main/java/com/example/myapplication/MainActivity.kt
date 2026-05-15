@@ -11,9 +11,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Modifier
-import com.example.myapplication.practice.fieldnotes.FieldNotesPracticeScreen
+import com.example.myapplication.practice.fieldnotes.ui.FieldNotesPracticeScreen
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,9 @@ class MainActivity : ComponentActivity() {
                         TopAppBar(title = { Text("Offline Field Notes") })
                     },
                 ) { innerPadding ->
-                    FieldNotesPracticeScreen(modifier = Modifier.padding(innerPadding))
+                    FieldNotesPracticeScreen(
+                        modifier = Modifier.padding(innerPadding),
+                    )
                 }
             }
         }

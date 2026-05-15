@@ -6,10 +6,10 @@ import org.junit.Test
 
 class FieldNotesRepositoryTest {
     @Test
-    fun inMemoryRepository_returnsSeedNotes() {
-        val notes = InMemoryFieldNotesRepository().loadNotes()
+    fun starterData_containsSeedNotes() {
+        val notes = FieldNotesStarterData.notes
 
-        assertEquals(3, notes.size)
+        assertEquals(10, notes.size)
         assertTrue(notes.any { it.status == NoteStatus.Open })
         assertTrue(notes.any { it.status == NoteStatus.Complete })
     }
