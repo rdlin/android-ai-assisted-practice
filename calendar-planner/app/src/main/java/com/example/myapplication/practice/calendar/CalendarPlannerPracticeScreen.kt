@@ -14,15 +14,14 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun CalendarPlannerPracticeScreen(
+    repository: CalendarRepository,
     modifier: Modifier = Modifier,
-    repository: CalendarRepository = remember { InMemoryCalendarRepository() },
 ) {
     val events = CalendarRules.sortedEvents(repository.loadEvents())
     val sampleCandidate = TimeRange(TimeOfDay(10, 0), TimeOfDay(10, 45))
@@ -54,6 +53,7 @@ fun CalendarPlannerPracticeScreen(
                     "Add create/edit event UI with time validation.",
                     "Show overlapping events inline before saving.",
                     "Add an available-slot finder for a requested duration.",
+                    "Extend the Hilt graph when you add persistence or use cases.",
                     "Persist events and keep form state across rotation.",
                 ),
             )

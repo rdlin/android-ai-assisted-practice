@@ -11,10 +11,17 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Modifier
+import com.example.myapplication.practice.calendar.CalendarRepository
 import com.example.myapplication.practice.calendar.CalendarPlannerPracticeScreen
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class MainActivity : ComponentActivity() {
+@AndroidEntryPoint(ComponentActivity::class)
+class MainActivity : Hilt_MainActivity() {
+    @Inject
+    lateinit var calendarRepository: CalendarRepository
+
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +34,10 @@ class MainActivity : ComponentActivity() {
                         TopAppBar(title = { Text("Calendar Day Planner") })
                     },
                 ) { innerPadding ->
-                    CalendarPlannerPracticeScreen(modifier = Modifier.padding(innerPadding))
+                    CalendarPlannerPracticeScreen(
+                        repository = calendarRepository,
+                        modifier = Modifier.padding(innerPadding),
+                    )
                 }
             }
         }
