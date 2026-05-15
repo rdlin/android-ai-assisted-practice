@@ -1,6 +1,6 @@
 # Android AI-Assisted Practice
 
-This repo contains three independent Android starter projects for one-hour AI-assisted coding practice. Each top-level project directory is meant to feel like a downloadable interview zip: a running Compose app, seed data, partial feature code, prompt files, hint files, and a few tests.
+This repo contains three independent Android starter projects for one-hour AI-assisted coding practice. Each top-level project directory is meant to feel like a downloadable interview zip: a running Compose app, seed data, partial feature code, a prompt file, and a few tests.
 
 ## Projects
 
@@ -22,7 +22,12 @@ To import a project in Android Studio, choose **Open** and select one of the pro
 Each project keeps its prompt next to the app code:
 
 - `problem.md`: interview-facing prompt, starter code map, required features, acceptance criteria
-- `hints.md`: architecture suggestions, AI practice goals, stretch goals
+
+Hints are intentionally outside the Android projects so they are not imported with the starter apps:
+
+- `hints/field-notes-hints.md`
+- `hints/calendar-planner-hints.md`
+- `hints/receipt-review-hints.md`
 
 ## Recommended Workflow
 
@@ -32,7 +37,8 @@ Each project keeps its prompt next to the app code:
 4. Use AI to propose a small implementation plan and file map.
 5. Implement one vertical slice first: UI state, one interaction, and one test.
 6. Add persistence and edge cases after the happy path works.
-7. Reserve the final 10 minutes for tests, cleanup, and a short tradeoff explanation.
+7. Open the matching hint file only if you get blocked or after your timed attempt.
+8. Reserve the final 10 minutes for tests, cleanup, and a short tradeoff explanation.
 
 ## Running Tests
 
