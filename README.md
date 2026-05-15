@@ -59,5 +59,7 @@ Or open a single project directory and run:
 If running from a fresh clone outside Android Studio, create a local `local.properties` in the project you are testing with your Android SDK path, for example:
 
 ```properties
-sdk.dir=/Users/you/Library/Android/sdk
+sdk.dir=<path-to-your-android-sdk>
 ```
+
+Replace the path with the Android SDK location on your machine.
