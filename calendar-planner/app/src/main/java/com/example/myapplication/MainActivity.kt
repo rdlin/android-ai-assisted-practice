@@ -17,8 +17,8 @@ import com.example.myapplication.ui.theme.MyApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-@AndroidEntryPoint(ComponentActivity::class)
-class MainActivity : Hilt_MainActivity() {
+@AndroidEntryPoint
+class MainActivity : ComponentActivity() {
     @Inject
     lateinit var calendarRepository: CalendarRepository
 
